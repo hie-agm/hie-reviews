@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leave a Review — Holiday Inn Express Dickinson</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sky: #1E2A38;
+    --sky-deep: #141D28;
+    --sandstone: #D8A657;
+    --clay: #BC5B37;
+    --sage: #7E8C6F;
+    --cream: #F4EEE1;
+    --cream-dim: #C9C2B2;
+    --line: rgba(244,238,225,0.14);
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--sky-deep);
+    color: var(--cream);
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 0 0 48px;
+  }
+
+  .page {
+    width: 100%;
+    max-width: 480px;
+    position: relative;
+  }
+
+  /* ---- Hero: badlands skyline at dusk ---- */
+  .hero {
+    position: relative;
+    background: linear-gradient(180deg, var(--sky) 0%, var(--sky-deep) 78%);
+    padding: 56px 28px 0;
+    overflow: hidden;
+  }
+
+  .hero-glow {
+    position: absolute;
+    top: -120px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 340px;
+    height: 340px;
+    background: radial-gradient(circle, rgba(216,166,87,0.35) 0%, rgba(216,166,87,0) 70%);
+    pointer-events: none;
+  }
+
+  .eyebrow {
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--sandstone);
+    text-align: center;
+    margin: 0 0 14px;
+  }
+
+  h1 {
+    position: relative;
+    font-family: 'Fraunces', serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-size: 34px;
+    line-height: 1.12;
+    text-align: center;
+    margin: 0 0 12px;
+    color: var(--cream);
+  }
+
+  .hero p {
+    position: relative;
+    text-align: center;
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--cream-dim);
+    margin: 0 auto;
+    max-width: 340px;
+  }
+
+  .skyline {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: 34px;
+  }
+
+  /* ---- Buttons section ---- */
+  .card {
+    background: var(--sky-deep);
+    padding: 28px 24px 8px;
+  }
+
+  .platforms {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btn {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+    background: #202B39;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px 18px;
+    transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+  }
+
+  .btn:active { transform: scale(0.98); }
+
+  .btn:hover {
+    border-color: var(--mark, var(--sandstone));
+    background: #24303F;
+  }
+
+  .mark {
+    flex: 0 0 auto;
+    width: 40px;
+    height: 40px;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mark svg { width: 22px; height: 22px; }
+
+  .btn-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .btn-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 15.5px;
+    color: var(--cream);
+  }
+
+  .btn-sub {
+    font-size: 12.5px;
+    color: var(--cream-dim);
+  }
+
+  .chevron {
+    margin-left: auto;
+    flex: 0 0 auto;
+    color: var(--cream-dim);
+  }
+
+  /* Platform marks */
+  .google  { background: rgba(216,166,87,0.14); --mark: var(--sandstone); }
+  .google  .mark { background: var(--sandstone); }
+  .booking { --mark: #2E5FAF; }
+  .booking .mark { background: #2E5FAF; }
+  .hotels  { --mark: var(--clay); }
+  .hotels  .mark { background: var(--clay); }
+  .expedia { --mark: var(--sage); }
+  .expedia .mark { background: var(--sage); }
+
+  .note {
+    margin: 22px 4px 0;
+    padding: 14px 16px;
+    border-radius: 10px;
+    background: rgba(126,140,111,0.12);
+    border: 1px solid rgba(126,140,111,0.3);
+    font-size: 12.5px;
+    line-height: 1.55;
+    color: var(--cream-dim);
+  }
+
+  .note strong { color: var(--cream); }
+
+  footer {
+    text-align: center;
+    margin-top: 34px;
+    padding: 0 28px;
+  }
+
+  footer .divider {
+    width: 40px;
+    height: 1px;
+    background: var(--line);
+    margin: 0 auto 16px;
+  }
+
+  footer p {
+    font-size: 12px;
+    color: var(--cream-dim);
+    margin: 0;
+    letter-spacing: 0.02em;
+  }
+
+  footer .hotel-name {
+    font-family: 'Fraunces', serif;
+    font-size: 15px;
+    color: var(--cream);
+    margin-bottom: 4px;
+    font-weight: 600;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .btn { transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="hero">
+    <div class="hero-glow"></div>
+    <p class="eyebrow">Holiday Inn Express &amp; Suites · Dickinson, ND</p>
+    <h1>How was<br>your stay?</h1>
+    <p>Tell us about it — pick the site where you'd like to leave your review.</p>
+
+    <svg class="skyline" viewBox="0 0 480 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="0,120 0,78 30,60 55,74 80,48 110,70 140,52 165,66 190,40 225,68 260,50 290,72 320,55 350,75 380,58 410,80 440,62 480,78 480,120" fill="#141D28"/>
+      <polygon points="0,120 0,95 40,84 70,98 100,80 130,96 160,86 195,100 225,82 255,100 290,88 320,102 355,90 390,104 420,92 450,106 480,96 480,120" fill="#0F161F"/>
+      <circle cx="240" cy="34" r="16" fill="#D8A657" opacity="0.9"/>
+    </svg>
+  </div>
+
+  <div class="card">
+    <div class="platforms">
+
+      <a class="btn google" href="https://search.google.com/local/writereview?placeid=ChIJcRSWSlc9JlMRuI8P9AW5xL4" target="_blank" rel="noopener">
+        <span class="mark">
+          <svg viewBox="0 0 24 24"><path fill="#1E2A38" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#1E2A38" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.25 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.85A11 11 0 0 0 12 23z"/><path fill="#1E2A38" d="M5.84 14.1a6.6 6.6 0 0 1 0-4.2V7.05H2.18a11 11 0 0 0 0 9.9l3.66-2.85z"/><path fill="#1E2A38" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1a11 11 0 0 0-9.82 6.05l3.66 2.85C6.71 7.31 9.14 5.38 12 5.38z"/></svg>
+        </span>
+        <span class="btn-text">
+          <span class="btn-title">Google</span>
+          <span class="btn-sub">Open to all guests · sign in with Google</span>
+        </span>
+        <span class="chevron">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </a>
+
+      <a class="btn booking" href="https://www.booking.com/hotel/us/holiday-inn-express-suites-dickinson.html" target="_blank" rel="noopener">
+        <span class="mark">
+          <svg viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="16" rx="2" fill="#fff"/><rect x="7.5" y="9" width="9" height="2.4" rx="1.2" fill="#2E5FAF"/><rect x="7.5" y="13" width="6" height="2.4" rx="1.2" fill="#2E5FAF"/></svg>
+        </span>
+        <span class="btn-text">
+          <span class="btn-title">Booking.com</span>
+          <span class="btn-sub">For guests who booked via Booking.com</span>
+        </span>
+        <span class="chevron">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </a>
+
+      <a class="btn hotels" href="https://www.hotels.com/ho36376480/holiday-inn-express-hotel-suites-dickinson-an-ihg-hotel-dickinson-united-states-of-america/" target="_blank" rel="noopener">
+        <span class="mark">
+          <svg viewBox="0 0 24 24"><path fill="#fff" d="M4 20V9l8-5 8 5v11h-5v-6h-6v6z"/></svg>
+        </span>
+        <span class="btn-text">
+          <span class="btn-title">Hotels.com</span>
+          <span class="btn-sub">For guests who booked via Hotels.com</span>
+        </span>
+        <span class="chevron">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </a>
+
+      <a class="btn expedia" href="https://www.expedia.com/Dickinson-Hotels-Holiday-Inn-Express-Hotel-Suites-Dickinson.h1105515.Hotel-Information" target="_blank" rel="noopener">
+        <span class="mark">
+          <svg viewBox="0 0 24 24"><path fill="#fff" d="M12 3l7 4v10l-7 4-7-4V7z"/><path fill="#7E8C6F" d="M12 3v18l-7-4V7z"/></svg>
+        </span>
+        <span class="btn-text">
+          <span class="btn-title">Expedia</span>
+          <span class="btn-sub">For guests who booked via Expedia</span>
+        </span>
+        <span class="chevron">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </a>
+
+    </div>
+
+    <div class="note">
+      <strong>Not sure which to pick?</strong> Choose Google — anyone can leave a review there. The other three only accept reviews from guests who booked directly through that site.
+    </div>
+
+    <footer>
+      <div class="divider"></div>
+      <p class="hotel-name">Holiday Inn Express &amp; Suites</p>
+      <p>103 14th St W, Dickinson, ND 58601</p>
+    </footer>
+  </div>
+
+</div>
+</body>
+</html>
