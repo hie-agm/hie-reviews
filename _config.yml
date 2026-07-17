@@ -1,0 +1,8 @@
+title: Holiday Inn Express & Suites Dickinson — Guest Reviews
+description: Landing page for guests to leave a review on their platform of choice.
+theme: null
+
+# Serve index.html as-is without Jekyll trying to reprocess unrelated files
+exclude:
+  - README.md
+  - .github
